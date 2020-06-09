@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Redirect } from 'react-router-dom';
-
+import {Markup} from 'interweave';
 
 
 class SearchResultComponent extends React.Component
@@ -29,19 +29,22 @@ class SearchResultComponent extends React.Component
         //     </ul>
         // </div>
 
-        <div>Hello
+        <div>
             {console.log(this.props.location)}
-            {/* <ul>
-                {this.props.location.searchResults && this.props.location.searchResults.map(
+             <ul>
+                {this.props.location.searchResults && this.props.location.searchResults.query.search.map(
                    (result) => {
                      return(
                         <li>
-                         result.title
+                          {result.title}
+      
+                          <Markup content={result.snippet} />
+                          <br/>
                         </li>
                      )  
                    }
                 )}
-            </ul> */}
+            </ul> 
         </div>
     )
 

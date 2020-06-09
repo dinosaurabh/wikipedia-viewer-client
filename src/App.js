@@ -48,12 +48,13 @@ class SearchBar extends React.Component
         .then(data => this.setState({
           searchResults : data
         }))
-
-        console.log('results'  + this.state.searchResults);
-    this.setState( {
-      redirectToResults: true
-      } 
-    )
+          .then(() => console.log('results'  + this.state.searchResults))
+            .then(() =>  this.setState( {
+              redirectToResults: true
+              }
+            ))
+        // console.log('results'  + this.state.searchResults);
+   
 
 
     }
